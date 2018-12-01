@@ -1,4 +1,3 @@
-import Prelude hiding (Monoid,mappend)
 import Test.Hspec
 import Fp5
 

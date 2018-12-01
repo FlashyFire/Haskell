@@ -1,9 +1,7 @@
 module Fp5 where
-import Prelude hiding (Monoid,mappend)
-
-class Monoid m where
-    mappend :: m -> m -> m
-    mempty :: m
+    
+import Data.Semigroup
+import Data.Monoid
 
 --merge function
 merge :: Ord a => [a] -> [a] -> [a]
@@ -18,3 +16,6 @@ newtype SortedList a = SortedList { getSorted :: [a] } deriving (Eq, Show)
 instance Ord a => Monoid (SortedList a) where
     mempty = SortedList []
     mappend l r = SortedList $ merge (getSorted l) (getSorted r)
+
+instance Ord a => Semigroup (SortedList a) where
+    (<>) = mappend

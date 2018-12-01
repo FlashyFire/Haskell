@@ -1,5 +1,4 @@
 module Fp6 where
-import Prelude hiding(Monoid,mappend)
 import Fp5
 
 fsthalf :: [a] -> [a]

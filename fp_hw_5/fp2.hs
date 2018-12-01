@@ -5,7 +5,7 @@ import Data.Monoid
 
 -- По списку возвращает список пар -- (индекс, элемент)
 indices :: [a] -> [(Integer, a)]
-indices xs = zip (take (length xs) $ [0..]) xs
+indices xs = zip [0..] xs
 
 -- "Обнуляет" элементы данного списка, неудовлетворяющие заданному условию
 zeroBy :: Monoid a => [a] -> (a -> Bool) -> [a]
